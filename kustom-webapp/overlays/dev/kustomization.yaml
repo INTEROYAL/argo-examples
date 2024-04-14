@@ -1,8 +1,11 @@
 bases:
-- ../../base
+  - ../../base  # Path to the base resources
 
 patches:
- - replicas.yaml
+  - path: replicas.yaml 
+    target:
+      kind: Deployment
+      name: mywebapp  
 
 configMapGenerator:
 - name: mykustom-map
